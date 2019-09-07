@@ -1,0 +1,48 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CoinspotAPI
+</name>
+</assembly>
+<members>
+<member name="T:CoinspotAPI.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:CoinspotAPI.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:CoinspotAPI.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:CoinspotAPI.CoinspotAPIHandler.#ctor(System.String,System.String)">
+ <summary>
+ create new object, store keys
+ </summary>
+ <param name="APIKey"></param>
+ <param name="APISecret"></param>
+</member>
+<member name="M:CoinspotAPI.CoinspotAPIHandler.CallAPI(System.String,System.String)">
+ <summary>
+ sign request in HMAC SHA512 and call Coinspot API base URL and endpoint with supplied parameters, nonce is generated for you
+ </summary>
+ <param name="EndPoint">endpoint/path as specified by the Coinspot API docs</param>
+ <param name="JSONParameters">a JSON string of parameters as required by the Coinspot API endpoint EG {"cointype":"BTC", "amount":2.4}</param>
+ <returns>JSON string returned from endpoint</returns>
+</member>
+<member name="M:CoinspotAPI.CoinspotAPIHandler.SignData(System.Byte[])">
+ <summary>
+ compute HMAC
+ </summary>
+ <param name="JSONData">byte array of full JSON parameter list including nonce</param>
+ <returns>HMAC SHA512 encoded string of JSONData</returns>
+</member>
+</members>
+</doc>

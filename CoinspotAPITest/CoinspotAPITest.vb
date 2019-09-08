@@ -4,9 +4,10 @@
     Private secret As String = ""
 
     Sub Main()
+        GetKeys()
         If Not APIKeysSupplied() Then
             Console.Clear()
-            Console.WriteLine("API Keys not provided.  These need to be hardcoded before building the test app")
+            Console.WriteLine("API Keys not provided.  These need to be specified in the app.config")
             Console.ReadKey()
             Exit Sub
         End If
@@ -18,11 +19,22 @@
         Return True
     End Function
 
+    Sub GetKeys()
+        Try
+            key = System.Configuration.ConfigurationManager.AppSettings.Get("key")
+            secret = System.Configuration.ConfigurationManager.AppSettings.Get("secret")
+        Catch ex As Exception
+            Console.Clear()
+            Console.WriteLine("Exception reading API Keys from app.config - """ & ex.ToString() & """")
+            Console.ReadKey()
+        End Try
+    End Sub
+
     Sub MainMenu()
         Console.Clear()
         Console.WriteLine("Select an option (not case sensitive)")
         Console.WriteLine("A. Get All Balances")
-        Console.WriteLine("B. Get Coin Balance (CoinType - Required) Fails with 404")
+        Console.WriteLine("B. Get Coin Balance (CoinType - Required)")
         Console.WriteLine("C. Get Deposits")
         Console.WriteLine("D. Get Withdrawals")
         Console.WriteLine("E. Get All Transactions")
@@ -32,6 +44,8 @@
         Console.WriteLine("I. Get Send/Receive Transactions")
         Console.WriteLine("J. Get Affiliate Payments")
         Console.WriteLine("K. Get Referral Payments")
+        Console.WriteLine("L. Manual Endpoint/Data")
+        Console.WriteLine("M. Exit App")
         Select Case LCase(Console.ReadKey().Key)
             Case ConsoleKey.A
                 GetAllBalances()
@@ -55,6 +69,10 @@
                 GetAffiliatePayments()
             Case ConsoleKey.K
                 GetReferralPayments()
+            Case ConsoleKey.L
+                ManualAPIProcess()
+            Case ConsoleKey.M
+                Environment.Exit(0)
         End Select
         MainMenu()
     End Sub
@@ -128,6 +146,15 @@
     Sub GetReferralPayments()
         Console.Clear()
         RequestCS("/api/ro/my/referralpayments", "{}")
+    End Sub
+
+    Sub ManualAPIProcess()
+        Console.Clear()
+        Console.WriteLine("Enter endpoint path (start with /api/)")
+        Dim APIPath = Console.ReadLine()
+        Console.WriteLine("Enter parameters (JSON object string format {""parameter"":""data""})")
+        Dim Parameters = Console.ReadLine()
+        RequestCS(APIPath, Parameters)
     End Sub
 
 End Module

@@ -29,6 +29,14 @@ CoinspotAPI
  <param name="APIKey"></param>
  <param name="APISecret"></param>
 </member>
+<member name="M:CoinspotAPI.CoinspotAPIHandler.CallAPI(System.String,System.String)">
+ <summary>
+ sign request in HMAC SHA512 and call Coinspot API base URL and endpoint with supplied parameters, nonce is generated for you
+ </summary>
+ <param name="EndPoint">endpoint/path as specified by the Coinspot API docs</param>
+ <param name="JSONParameters">a JSON string of parameters as required by the Coinspot API endpoint EG {"cointype":"BTC", "amount":2.4}</param>
+ <returns>JSON string returned from endpoint</returns>
+</member>
 <member name="M:CoinspotAPI.CoinspotAPIHandler.SignData(System.Byte[])">
  <summary>
  compute HMAC

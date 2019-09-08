@@ -1,10 +1,10 @@
 # CoinspotAPI
 
-A .Net 4.5.2 example library for interacting with Coinspot RO API, written in Visual Basic
+A .Net 4.5.2 example library for interacting with Coinspot API, written in Visual Basic
 
 A simple API client developed to assist people understanding the requirements of the Coinspot API.
 
-Includes handler library and test console app to show usage.
+Includes handler library and test console app to show usage.  Test app implements all of the read-only endpoints provided by Coinspot, and provides a manual processor to allow the user to manually specify an endpoint and parameter string for more detailed testing.
 
 A good starter to show what the Coinspot API requires for a successful connection since their documentation is very light.
 
@@ -12,7 +12,7 @@ A good starter to show what the Coinspot API requires for a successful connectio
 
 1. Simply download or pull the CoinspotAPI.dll file from the release folder, or pull the whole project and build yourself.
 2. Include the library in your project
-3. (if using the test console app you need to update the key and secret global variables and then build)
+3. (if using the test console app you need to update the key and secret in the app.config)
 
 ### Example Usage with Parameter
 ```

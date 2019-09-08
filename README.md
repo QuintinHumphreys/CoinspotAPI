@@ -12,7 +12,7 @@ A good starter to show what the Coinspot API requires for a successful connectio
 
 1. Simply download or pull the CoinspotAPI.dll file from the release folder, or pull the whole project and build yourself.
 2. Include the library in your project
-3. (if using the test console app you need to update the key and secret in the app.config)
+3. (if using the test console app you need to update the key and secret in the app.config before build or if not building and simply running from my build add key and secret in CoinspotAPITest.exe.config in release folder)
 
 ### Example Usage with Parameter
 ```

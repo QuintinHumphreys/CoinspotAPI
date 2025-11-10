@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CoinspotAPI", "CoinspotAPI\CoinspotAPI.vbproj", "{94C2AC5C-143B-4BB8-9E30-7508D9D30084}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CoinspotAPITest", "CoinspotAPITest\CoinspotAPITest.vbproj", "{992818B9-D3C6-4B7F-9F7B-A7D53B8C47E9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{94C2AC5C-143B-4BB8-9E30-7508D9D30084} = {94C2AC5C-143B-4BB8-9E30-7508D9D30084}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94C2AC5C-143B-4BB8-9E30-7508D9D30084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C2AC5C-143B-4BB8-9E30-7508D9D30084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C2AC5C-143B-4BB8-9E30-7508D9D30084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C2AC5C-143B-4BB8-9E30-7508D9D30084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{992818B9-D3C6-4B7F-9F7B-A7D53B8C47E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{992818B9-D3C6-4B7F-9F7B-A7D53B8C47E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{992818B9-D3C6-4B7F-9F7B-A7D53B8C47E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{992818B9-D3C6-4B7F-9F7B-A7D53B8C47E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E76EB059-F037-4BDA-9F34-EB262A3E3A3B}
+	EndGlobalSection
+EndGlobal
